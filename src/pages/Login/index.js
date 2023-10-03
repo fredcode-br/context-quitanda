@@ -10,11 +10,10 @@ import {
   InputAdornment 
 } from '@material-ui/core';
 
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { UsuarioContext } from 'common/context/Usuario'
-
-import { useContext } from 'react';
 
 function Login() {
   const navigate = useNavigate();
@@ -54,6 +53,7 @@ function Login() {
         variant="contained"
         color="primary"
         onClick={() => navigate('/feira')}
+        disabled={nome.length < 4}
       >
         Avançar
       </Button>
