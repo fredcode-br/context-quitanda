@@ -10,14 +10,12 @@ import {
   InputAdornment 
 } from '@material-ui/core';
 
-import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-import { UsuarioContext } from 'common/context/Usuario'
+import { useUsuarioContext } from 'common/context/Usuario'
 
 function Login() {
   const navigate = useNavigate();
-  const {nome, setNome, saldo, setSaldo} = useContext(UsuarioContext);
+  const { nome, setNome, saldo, setSaldo } = useUsuarioContext();
 
   return (
     <Container>

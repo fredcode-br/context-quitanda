@@ -6,6 +6,7 @@ import { CarrinhoLayout } from 'common/context/Layout/CarrinhoLayout';
 import Login from './pages/Login';
 import Feira from 'pages/Feira';
 import Carrinho from 'pages/Carrinho';
+import { PagamentoLayout } from 'common/context/Layout/PagamentoLayout';
 
 function Router () {
 
@@ -15,10 +16,12 @@ function Router () {
                     <Route element={<UsuarioLayout/>}>
                         <Route exact path="/"  element={<Login />} />
                         <Route element={<CarrinhoLayout/>}>
-                            <Route path="/feira"  element={<Feira/>} />
+                            <Route element={<PagamentoLayout/>}>
+                                <Route path="/feira"  element={<Feira/>} />
+                                <Route path="/carrinho"  element={<Carrinho/>} />
+                            </Route>
                         </Route>
                     </Route>
-                        <Route path="/carrinho"  element={<Carrinho/>} />
                 </Routes>
         </BrowserRouter>
     )
